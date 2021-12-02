@@ -10,7 +10,9 @@ phases:
   build:
     commands:
       - echo Build started on `date`
+      - ls -l
       - gcc hello.c -o hello
+      - ./hello
   post_build:
     commands:
       - echo Build completed on `date`
