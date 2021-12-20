@@ -14,5 +14,7 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
+          gcc hello.c -o hello
+          ./hello
       - run: echo "🍏 This job's status is ${{ job.status }}."
 
