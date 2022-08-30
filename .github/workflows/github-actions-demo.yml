@@ -7,12 +7,12 @@ on:
       - main
 
 jobs:
-  runs-on: ubuntu-latest
-  steps:
-    - name: Step 1 - Create a temporary artifact downloads folder
+  check-test-build:
+    runs-on: ubuntu-latest
+    steps:
+      name : create-directory
       run: mkdir downloads
-    
-    - name: Check out repository code
+      name : checkout
       uses: actions/checkout@v2
       run: |
           ls ${{ github.workspace }}
@@ -20,8 +20,7 @@ jobs:
           ./hello
       run: echo "🍏 This job's status is ${{ job.status }}."
       run: cp hello downloads        
-    
-    - name: Step 3 - Use the Upload Artifact GitHub Action
+      name : artificats
       uses: actions/upload-artifact@v2
       with: 
         name: assets-for-download
