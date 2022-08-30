@@ -18,5 +18,4 @@ jobs:
           ls ${{ github.workspace }} 
           gcc hello.c -o hello
           ./hello
-        run: echo "🍏 This job's status is ${{ job.status }}."
         run: cp hello downloads        
