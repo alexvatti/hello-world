@@ -1,16 +1,17 @@
-name: "Publish GitHub Actions Artifacts Example"
-true: 
-  push: "branches - main" 
-  
-jobs: 
-  check-test-build: 
+name: GitHub Actions Demo
+on:
+  push:
+    - main
+    - master
+jobs:
+  Explore-GitHub-Actions:
     runs-on: ubuntu-latest
-    steps: 
-      - 
-        name: create-directory
-        run: "mkdir downloads"
-      - 
-        name: checkout
-        run: "cp hello downloads"
+    steps:
+      - name: Check out repository code
         uses: actions/checkout@v2
-      
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+          gcc hello.c -o hello
+          ./hello
+      - run: echo "This job's status is ${{ job.status }}."
