@@ -10,18 +10,13 @@ jobs:
   check-test-build:
     runs-on: ubuntu-latest
     steps:
-      name : create-directory
-      run: mkdir downloads
-      name : checkout
-      uses: actions/checkout@v2
-      run: |
-          ls ${{ github.workspace }}
+      - name : create-directory
+        run: mkdir downloads
+      - name : checkout
+        uses: actions/checkout@v2
+        run: |
+          ls ${{ github.workspace }} 
           gcc hello.c -o hello
           ./hello
-      run: echo "🍏 This job's status is ${{ job.status }}."
-      run: cp hello downloads        
-      name : artificats
-      uses: actions/upload-artifact@v2
-      with: 
-        name: assets-for-download
-        path: downloads
+        run: echo "🍏 This job's status is ${{ job.status }}."
+        run: cp hello downloads        
