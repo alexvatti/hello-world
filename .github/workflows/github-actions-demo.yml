@@ -20,4 +20,5 @@ jobs:
           ls ${{ github.workspace }}
           gcc hello.c -o hello
           ./hello
+          cmake --help
       - run: echo "🍏 This job's status is ${{ job.status }}."
