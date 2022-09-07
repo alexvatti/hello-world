@@ -17,10 +17,8 @@ jobs:
           ./hello
       - run: echo "This job's status is ${{ job.status }}."
       
-      - name: Download artifact from build
-        uses: actions/download-artifact@v3
+      - name : Artifacts
+        uses: actions/upload-artifact@v3
         with:
-          repo: alexvatti/hello-world
-          artifact_name: my-artifact
-          rename: new-artifact-name    
-          wait_seconds: 60  
+          name: my-artifact
+          path: hello
