@@ -18,7 +18,7 @@ jobs:
       - run: echo "This job's status is ${{ job.status }}."
       
       - name: Download artifact from build
-        uses: bettermarks/action-artifact-download@0.3.0
+        uses: actions/download-artifact@v3
         with:
           repo: alexvatti/hello-world
           artifact_name: my-artifact
