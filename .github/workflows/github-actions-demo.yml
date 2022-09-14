@@ -16,13 +16,12 @@ jobs:
         with:
           repo: alexvatti/hello-world-lib
           token: ${{ secrets.GITHUB_TOKEN }}
-          artifact_name: lib-artifact
-          rename: lib-artifact    
+          artifact_name: lib-artifact   
           wait_seconds: 60  
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
-          cp lib-artifact/* ./ 
+          cp lib-artifact /* ./ 
           gcc hello.c -Lladd -o hello
           ./hello
       - run: echo "This job's status is ${{ job.status }}."
