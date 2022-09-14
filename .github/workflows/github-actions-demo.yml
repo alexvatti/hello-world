@@ -22,7 +22,7 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
-          unzip lib-artifact.zip 
+          cp lib-artifact/* ./ 
           gcc hello.c -Lladd -o hello
           ./hello
       - run: echo "This job's status is ${{ job.status }}."
