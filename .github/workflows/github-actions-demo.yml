@@ -13,7 +13,7 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
-          curl -JLO -H "Accept: application/vnd.github+json" -H "Authorization: Bearer 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" https://api.github.com/repos/alexvatti/hello-world-lib/actions/artifacts/362978694/zip
+          curl -JLO -H "Accept: application/vnd.github+json" -H "Authorization: Bearer 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" https://api.github.com/repos/alexvatti/hello-world-lib/actions/artifacts/362978694/zip
           unzip lib-artifact.zip 
           gcc hello.c -Lladd -o hello
           ./hello
