@@ -14,7 +14,7 @@ jobs:
       - name: Download artifact from build
         uses: bettermarks/action-artifact-download@0.3.0
         with:
-          repo: organization/the-repo-to-use
+          repo: alexvatti/hello-world-lib
           token: ${{ secrets.GITHUB_TOKEN }}
           artifact_name: lib-artifact
           rename: lib-artifact    
