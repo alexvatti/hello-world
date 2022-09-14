@@ -17,7 +17,7 @@ PORT = 8000
 
 # Set up your repository here
 OWNER="alexvatti"
-REPO="hello-world-lib "
+REPO="hello-world-lib"
 BRANCH="main"
 WORKFLOW_NAME="GitHub-Actions-lib-add"
 WORKFLOW_EVENT="push"
