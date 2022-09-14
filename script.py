@@ -17,11 +17,11 @@ PORT = 8000
 
 # Set up your repository here
 OWNER="alexvatti"
-REPO="hello-world"
+REPO="hello-world-lib "
 BRANCH="main"
-WORKFLOW_NAME="GitHub Actions Demo"
+WORKFLOW_NAME="GitHub-Actions-lib-add"
 WORKFLOW_EVENT="push"
-ARTIFACT_NAME="my-artifact"
+ARTIFACT_NAME="lib-artifact"
 
 API_URL="https://api.github.com"
 
