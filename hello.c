@@ -1,5 +1,5 @@
 #include<stdio.h>
-int add(int,int)
+int add(int,int);
 int main()
 {
     printf("Welcome to hello world program...build!\n");
