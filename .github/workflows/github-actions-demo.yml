@@ -10,18 +10,19 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
-        
-      - name: Download artifact from build
-        uses: bettermarks/action-artifact-download@0.3.0
-        with:
-          repo: alexvatti/hello-world-lib
-          token: ${{ secrets.GITHUB_TOKEN }}
-          artifact_name: lib-artifact   
-          wait_seconds: 60  
+      - env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          curl -JLO \
+          --url "https://api.github.com/repos/alexvatti/hello-world-lib/actions/artifacts/362978694/zip" \ \
+          --header "Authorization: Bearer $GH_TOKEN" \
+          --header "Accept: application/vnd.github+json"
+          
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
           cp lib-artifact /* ./ 
+          ls lib-artifact*
           gcc hello.c -Lladd -o hello
           ./hello
       - run: echo "This job's status is ${{ job.status }}."
