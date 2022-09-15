@@ -23,7 +23,8 @@ jobs:
         run: |
           ls ${{ github.workspace }}
           unzip lib-artifact.zip 
-          gcc hello.c -Lladd -o hello
+          ls ${{ github.workspace }}
+          gcc hello.c -L./ladd -o hello
           ./hello
       - run: echo "This job's status is ${{ job.status }}."
       
