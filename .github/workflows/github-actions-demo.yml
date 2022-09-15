@@ -24,8 +24,7 @@ jobs:
           ls ${{ github.workspace }}
           unzip lib-artifact.zip 
           ls ${{ github.workspace }}
-          gcc hello.c -L./ladd -o hello
-          ./hello
+          gcc hello.c -L./ ladd -o hello
       - run: echo "This job's status is ${{ job.status }}."
       
       - name : Artifacts
