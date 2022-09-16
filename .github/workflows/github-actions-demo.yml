@@ -30,9 +30,9 @@ jobs:
                 print(response.status_code)
                 json = response.json()
                 for workflow in json['workflows']:
-                if workflow['name'] == workflow_name:
-                  print(workflow['name'])
-                  return workflow['id']
+                  if workflow['name'] == workflow_name:
+                    print(workflow['name'])
+                    return workflow['id']
                 return None #FIXME: Exception
                 
               def get_latest_workflow_run_id(workflow_id, workflow_event):
