@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
-        run: sudo pip3 install requests
+        run: sudo pip install requests
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
       - uses: jannekem/run-python-script-action@v1
