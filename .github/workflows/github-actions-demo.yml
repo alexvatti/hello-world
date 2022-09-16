@@ -15,6 +15,7 @@ jobs:
       - uses: jannekem/run-python-script-action@v1
         with:
           script: |
+              #!/usr/bin/env python3
               import sys
               import requests
               OWNER="alexvatti"
