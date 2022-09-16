@@ -51,8 +51,8 @@ jobs:
                   # Match by event
                   if workflow_run['event'] != workflow_event:
                       continue
-                return workflow_run['id']
-              return None #FIXME: Exception
+                  return workflow_run['id']
+                return None #FIXME: Exception
 
               def get_artifact_id(workflow_run_id, name):
                 response = requests.get("%s/repos/%s/%s/actions/runs/%s/artifacts" % (API_URL, OWNER, REPO, workflow_run_id))
