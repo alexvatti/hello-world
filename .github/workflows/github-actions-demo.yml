@@ -20,7 +20,7 @@ jobs:
           -H "Authorization: Bearer $GH_TOKEN" \
           https://api.github.com/repos/alexvatti/hello-world-lib/actions/artifacts | jq '.artifacts[0].archive_download_url')
           echo $url
-          url=echo "$url" | tr -d '"'
+          url=echo $url| tr -d '"'
           echo $url
           
           curl -JLO \
