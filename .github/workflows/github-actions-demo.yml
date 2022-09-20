@@ -16,10 +16,10 @@ jobs:
       - env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          url=curl  -H "Accept: application/vnd.github+json"  \
+          curl  -H "Accept: application/vnd.github+json"  \
           -H "Authorization: Bearer $GH_TOKEN" \
           https://api.github.com/repos/alexvatti/hello-world-lib/actions/artifacts | jq '.artifacts[0].archive_download_url'
-          echo $url
+          
           curl -JLO \
            -H "Accept: application/vnd.github+json" \
            -H "Authorization: Bearer $GH_TOKEN" \
