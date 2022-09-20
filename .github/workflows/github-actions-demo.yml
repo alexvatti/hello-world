@@ -24,7 +24,7 @@ jobs:
           curl -JLO \
            -H "Accept: application/vnd.github+json" \
            -H "Authorization: Bearer $GH_TOKEN" \
-            https://api.github.com/repos/alexvatti/hello-world-lib/actions/artifacts/364230672/zip
+            $url
           
       - name: List files in the repository
         run: |
