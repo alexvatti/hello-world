@@ -18,10 +18,9 @@ jobs:
         run: |
           url=$(curl  -H "Accept: application/vnd.github+json"  \
           -H "Authorization: Bearer $GH_TOKEN" \
-          https://api.github.com/repos/alexvatti/hello-world-lib/actions/artifacts | jq '.artifacts[0].archive_download_url')
+          https://api.github.com/repos/alexvatti/hello-world-lib/actions/artifacts | jq -r '.artifacts[0].archive_download_url')
           echo $url
-          url=echo $url| tr -d '"'
-          echo $url
+    
           
           curl -JLO \
            -H "Accept: application/vnd.github+json" \
